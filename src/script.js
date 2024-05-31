@@ -1,5 +1,5 @@
-const typingText = document.querySelector(".typing-text .paragraph-text"); // Updated selector for paragraph text
-const input = document.querySelector(".input-field"); // Updated selector for input field
+const typingText = document.querySelector(".typing-text .paragraph-text");
+const input = document.querySelector(".input-field");
 const time = document.querySelector(".time span b");
 const mistakes = document.querySelector(".mistake span");
 const wpm = document.querySelector(".wpm span");
@@ -78,6 +78,7 @@ function initTyping(e) {
             isTyping = true;
         }
 
+        // Handle backspace
         if (e.inputType === "deleteContentBackward") {
             if (charIndex > 0) {
                 charIndex--;
@@ -97,7 +98,9 @@ function initTyping(e) {
             }
             char.forEach(span => span.classList.remove("cursor"));
             charIndex++;
-            char[charIndex].classList.add("active", "cursor");
+            if (charIndex < char.length) {
+                char[charIndex].classList.add("active", "cursor");
+            }
         }
 
         mistakes.innerText = mistake;
@@ -121,16 +124,18 @@ function initTime() {
 }
 
 function reset() {
-    loadParagraph();
     clearInterval(timer);
+    loadParagraph();
+    input.value = "";
     timeLeft = maxTime;
     time.innerText = timeLeft;
     charIndex = 0;
     mistake = 0;
     mistakes.innerText = 0;
     cpm.innerText = 0;
-    isTyping = false;
     wpm.innerText = 0;
+    isTyping = false;
+    input.focus();
 }
 
 input.addEventListener("input", initTyping);
