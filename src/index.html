@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="icon" href="../assets/logo.svg" type="image/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+    </style>
+    <title>Turbo-Typist</title>
+</head>
+
+<body class="bg-[#2b2b2b]">
+
+    <nav class="flex items-center gap-3 m-5 sm:mt-10 justify-center">
+        <div class="logo w-10">
+            <img src="../assets/logo.svg" alt="logo">
+        </div>
+        <h1 style="font-family: Ubuntu Sans Mono;" class="text-white font-semibold text-2xl sm:text-4xl">Turbo-Typist
+        </h1>
+    </nav>
+
+    <div class="wrapper">
+        <input type="text" class="input-field">
+        <div class="content-box">
+            <div class="typing-text">
+                <div style="font-family: Ubuntu Sans Mono;"
+                    class="paragraph-text text-center p-4 mt-16 sm:mt-32 m-auto sm:text-3xl sm:w-[70%] text-[#878787]">
+                </div>
+                <div class="content sm:mt-10">
+                    <ul class="result-details justify-between px-4 text-white text-center">
+                        <li class="time text-xl sm:text-4xl text-[#f5ed00]">
+                            <span><b>60</b></span>
+                        </li>
+                        <span class="font-mono flex justify-center gap-9 mt-5 sm:text-2xl">
+                            <li class="mistake flex">
+                                <p>Mistakes:</p>
+                                <span class="ml-1 text-[#f5ed00]">0</span>
+                            </li>
+                            <li class="wpm flex">
+                                <p>WPM:</p>
+                                <span class="ml-1 text-[#f5ed00]">0</span>
+                            </li>
+                            <li class="cpm flex">
+                                <p>CPM:</p>
+                                <span class="ml-1 text-[#f5ed00]">0</span>
+                            </li>
+                        </span>
+                    </ul>
+                    <div class="m-3 flex justify-center sm:text-2xl sm:m-7">
+                        <button class="text-[#f5ed00] border-2 border-[#f5ed00] rounded-lg p-1.5 font-semibold">TRY
+                            AGAIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"> </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
